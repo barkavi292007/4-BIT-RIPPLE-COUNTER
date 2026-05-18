@@ -28,22 +28,23 @@ In timing diagram Q0 is changing as soon as the negative edge of clock pulse is 
 
 **PROGRAM**
 ```
-module digital4(a,b,c,x,y,z,sum,dif,car,bor);
-input a,b,c,x,y,z;
-output sum,dif,car,bor;
-assign sum = a^b^c;
-assign car = a&b | a&c | b&c;
-assign dif = x^y^z;
-assign bor = ~x&z | ~x&y | y&z;
-endmodule
+module digital9(out,clk,rst); 
+ input clk,rst; 
+ output reg [3:0]out; 
+ always @ (posedge clk)
+ begin 
+ if(rst) 
+ out<=0; 
+ else 
+ out <= out-1; 
+ end endmodule
 
 ```
  Developed by:BHARGAVI S
  RegisterNumber:212225230033
 
 **RTL LOGIC FOR 4 Bit Ripple Counter**
-<img width="1249" height="655" alt="Screenshot 2026-05-18 200159" src="https://github.com/user-attachments/assets/94d10044-ee8e-4f89-9c01-e7fbfdf9664c" />
-
+<img width="1037" height="538" alt="Screenshot 2026-05-18 201535" src="https://github.com/user-attachments/assets/91b11c64-ae17-4749-8153-cc2a293d07dd" />
 
 **TIMING DIGRAMS FOR 4 Bit Ripple Counter**
 <img width="1275" height="677" alt="Screenshot 2026-05-18 200250" src="https://github.com/user-attachments/assets/77f4b423-81cc-482a-8997-9f960b28f6c1" />
